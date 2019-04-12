@@ -1,26 +1,27 @@
 
-function Pizza()  {
+function PizzaList()  {
   this.pizza = [];
   this.pizzaId = 0;
 };
 
-Pizza.prototype.addPizza = function(pizza)  {
+PizzaList.prototype.addPizza = function(pizza)  {
   pizza.id = this.givePizzaId();
   this.pizza.push(pizza);
 }
-Pizza.prototype.givePizzaId = function() {
+PizzaList.prototype.givePizzaId = function() {
   this.pizzaId += 1;
   return this.pizzaId;
 }
 
-Pizza.prototype.findPizza = function(id){
+PizzaList.prototype.findPizza = function(id){
   for(i = 0; i < this.pizza.length; i++){
     if(this.pizza[i]) {
       if(this.pizza[i].id == id){
         return this.pizza[i];
       }
     }
-  }
+  };
+  return false;
 }
 
 function compilePizza(thisName, thisSize, thisMeat, thisVeggie) {
@@ -30,14 +31,14 @@ function compilePizza(thisName, thisSize, thisMeat, thisVeggie) {
   this.thisVeggie = thisVeggie
 }
 
-var pizzaList = new Pizza();
+var pizzaList = new PizzaList();
 
 function attachPizzaEars()  {
   $("ol#listOfPizza").on("click", "li", function(){
     showPizza(this.id);
-    console.log(this.id);
   });
 };
+
 function showPizza(pizzaId) {
   var pizza = pizzaList.findPizza(pizzaId);
   $("#showPizza").show();
@@ -45,6 +46,7 @@ function showPizza(pizzaId) {
   $("#thisSize").html(pizza.thisSize);
   $("#thisMeat").html(pizza.thisMeat);
   $("#thisVeggie").html(pizza.thisVeggie);
+  console.log(this.pizza);
 }
 
 function displayChosenPizza(pizzaToDisplay) {
@@ -62,11 +64,9 @@ $(document).ready(function(){
     event.preventDefault();
     var inputThisName = $("input#inputNewName").val();
     var inputSize = $("#sizing").find(":selected").text();
-    var inputMeat = $("input:checkbox[name=steak]:checked").val() + $("input:checkbox[name=chicken]:checked").val() + $("input:checkbox[name=salami]:checked").val() +
-    $("input:checkbox[name=pate]:checked").val();
-    var inputVeggie = $("input:checkbox[name=pepper]:checked").val() + $("input:checkbox[name=mushrooom]:checked").val() + $("input:checkbox[name=olive]:checked").val() + $("input:checkbox[name=onion]:checked").val();
-
-    var freshPizza = new Pizza(inputThisName, inputSize, inputMeat, inputVeggie);
+    var inputVeggie = $("#veggieList").find(":selected").text();
+    var inputMeat = $("#meatList").find(":selected").text();
+    var freshPizza = new compilePizza(inputThisName, inputSize, inputMeat, inputVeggie);
     pizzaList.addPizza(freshPizza);
     displayChosenPizza(pizzaList);
     console.log(freshPizza);
