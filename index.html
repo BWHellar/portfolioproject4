@@ -20,10 +20,9 @@
             <label for="whatName">What is your name?</label>
             <input type="text" name="whatName" value="" id="inputNewName">
           <select class="form-group" id="sizing">
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-            <option value="xLarge">X-Large</option>
+            <option value="small" id="small">Small</option>
+            <option value="medium" id="medium">Medium</option>
+            <option value="large" id="large">Large</option>
           </select>
           <hr>
           <h4>Veggie Options</h4>
@@ -49,16 +48,10 @@
               <input type="number" name="amount" value="">
             </div>
             <hr>
-            <button type="submit" class="btn btn-danger" name="button">Calculate Pizza</button>
+            <button type="submit" class="btn btn-danger" name="button">Submit</button>
           </form>
-          <h2>Saved Pizzas:</h2>
-            <ol id="listOfPizza">
-            </ol>
           <div id="showPizza">
-            <p>Name: <span id="thisName"></span></p>
-            <p>Size: <span id="thisSize"></span></p>
-            <p>Meat: <span id="thisMeat"></span></p>
-            <p>Veggie: <span id="thisVeggie"></span></p>
+            <p>Cost: <span id="thisCost"></span></p>
           </div>
       </div>
     </div>
