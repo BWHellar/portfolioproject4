@@ -16,6 +16,9 @@
         <div class="col-md-6">
           <h2>Create Your Pizza</h2>
           <hr>
+          <form class="orderForm" action="index.html" method="post">
+            <label for="whatName">What is your name?</label>
+            <input type="text" name="whatName" value="" id="inputNewName">
           <select class="form-group" id="sizing">
             <option value="small">Small</option>
             <option value="medium">Medium</option>
@@ -24,7 +27,6 @@
           </select>
           <hr>
           <h4>Veggie Options</h4>
-          <form class="orderForm" action="index.html" method="post">
             <div class="checkbox">
               <input class="veggie" type="checkbox" name="pepper" value="pepper">Peppers
               <input class="veggie" type="checkbox" name="mushroom" value="mushroom">Mushrooms
@@ -47,6 +49,9 @@
             <hr>
             <button type="submit" class="btn btn-danger" name="button">Calculate Pizza</button>
           </form>
+          <h2>Saved Pizzas:</h2>
+            <ol id="listOfPizza">
+            </ol>
           <div id="showPizza">
             <p>Name: <span class="theName"></span></p>
             <p>Size: <span class="theSize"></span></p>
