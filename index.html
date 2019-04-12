@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="orderForm" action="index.html" method="post">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="pizzeSize">Select Pizza Size</label>
+            <select class="pizzaSize" name="sizes">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="exLarge">X-Large</option>
+            </select>
+            <label for="meat">Meat Options</label>
+            <select class="meatOptions" name="meat">
+              <option value="noMeat">No Meat</option>
+              <option value="steak">Steak</option>
+              <option value="salami">Salami</option>
+              <option value="chicken">Chicken</option>
+            </select>
+            <label for="vegetable">Vegetable Options</label>
+            <select class="veggieOptions" name="vegatable">
+              <option value="noVeggie">No Vegetables</option>
+              <option value="pepper">Peppers</option>
+              <option value="olives">Olives</option>
+              <option value="mushroom">Mushrooms</option>
+            </select>
+            <label for="notes">Notes</label>
+            <textarea name="notes" rows="8" cols="80"></textarea>
+            <button type="submit" name="button">Preview</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="Output">
+
+          </div>
+          <button type="button" name="button">Order</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
