@@ -16,7 +16,7 @@
         <div class="col-md-6">
           <h2>Create Your Pizza</h2>
           <hr>
-          <select class="form-group">
+          <select class="form-group" id="sizing">
             <option value="small">Small</option>
             <option value="medium">Medium</option>
             <option value="large">Large</option>
@@ -39,7 +39,17 @@
               <input class="meat" type="checkbox" name="salami" value="salami">Salami
               <input class="meat" type="checkbox" name="pate" value="pate">Pate
             </div>
+            <hr>
+            <div class="form-group">
+              <label for="amount">Input Amount</label>
+              <input type="number" name="amount" value="amount">
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-danger" name="button">Calculate Pizza</button>
           </form>
+          <div class="finalPrice">
+            <h3>Total: <span id="price"></span></h3>
+          </div>
         </div>
       </div>
     </div>
