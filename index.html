@@ -12,42 +12,36 @@
   </head>
   <body>
     <div class="container">
-      <form class="orderForm" action="index.html" method="post">
-        <div class="row">
-          <div class="col-md-6">
-            <label for="pizzeSize">Select Pizza Size</label>
-            <select class="pizzaSize" name="sizes">
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-              <option value="exLarge">X-Large</option>
-            </select>
-            <label for="meat">Meat Options</label>
-            <select class="meatOptions" name="meat">
-              <option value="noMeat">No Meat</option>
-              <option value="steak">Steak</option>
-              <option value="salami">Salami</option>
-              <option value="chicken">Chicken</option>
-            </select>
-            <label for="vegetable">Vegetable Options</label>
-            <select class="veggieOptions" name="vegatable">
-              <option value="noVeggie">No Vegetables</option>
-              <option value="pepper">Peppers</option>
-              <option value="olives">Olives</option>
-              <option value="mushroom">Mushrooms</option>
-            </select>
-            <label for="notes">Notes</label>
-            <textarea name="notes" rows="8" cols="80"></textarea>
-            <button type="submit" name="button">Preview</button>
-          </div>
-        </div>
+      <div class="row">
         <div class="col-md-6">
-          <div class="Output">
-
-          </div>
-          <button type="button" name="button">Order</button>
+          <h2>Create Your Pizza</h2>
+          <hr>
+          <select class="form-group">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xLarge">X-Large</option>
+          </select>
+          <hr>
+          <h4>Veggie Options</h4>
+          <form class="orderForm" action="index.html" method="post">
+            <div class="checkbox">
+              <input class="veggie" type="checkbox" name="pepper" value="pepper">Peppers
+              <input class="veggie" type="checkbox" name="mushroom" value="mushroom">Mushrooms
+              <input class="veggie" type="checkbox" name="olive" value="olive">Olives
+              <input class="veggie" type="checkbox" name="onion" value="onion">Onion
+            </div>
+            <hr>
+            <h4>Meat Options</h4>
+            <div class="checkbox">
+              <input class="meat" type="checkbox" name="steak" value="steak">Steak
+              <input class="meat" type="checkbox" name="chicken" value="chicken">Chicken
+              <input class="meat" type="checkbox" name="salami" value="salami">Salami
+              <input class="meat" type="checkbox" name="pate" value="pate">Pate
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>
