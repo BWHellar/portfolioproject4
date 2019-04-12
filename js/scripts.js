@@ -1,16 +1,26 @@
 
 function Pizza()  {
-  this.pizzas = []
-  this.pizzaId = 0
+  this.pizza = [];
+  this.pizzaId = 0;
 };
 
 Pizza.prototype.addPizza = function(pizza)  {
   pizza.id = this.givePizzaId();
-  this.pizzas.push(pizza)
+  this.pizza.push(pizza);
 }
 Pizza.prototype.givePizzaId = function() {
   this.pizzaId += 1;
   return this.pizzaId;
+}
+
+Pizza.prototype.findPizza = function(id){
+  for(i = 0; i < this.pizza.length; i++){
+    if(this.pizza[i]) {
+      if(this.pizza[i].id == id){
+        return this.pizza[i];
+      }
+    }
+  }
 }
 
 function compilePizza(thisName, thisSize, thisMeat, thisVeggie) {
@@ -22,25 +32,26 @@ function compilePizza(thisName, thisSize, thisMeat, thisVeggie) {
 
 var pizzaList = new Pizza();
 
-function attachPizzaEars(){
+function attachPizzaEars()  {
   $("ol#listOfPizza").on("click", "li", function(){
-    showPizza(this.pizzaId);
-  })
-}
+    showPizza(this.id);
+    console.log(this.id);
+  });
+};
 function showPizza(pizzaId) {
   var pizza = pizzaList.findPizza(pizzaId);
   $("#showPizza").show();
-  $(".thisName").html(pizza.thisName);
-  $(".thisSize").html(pizza.thisSize);
-  $(".thisMeat").html(pizza.thisMeat);
-  $(".thisVeggie").html(pizza.thisVeggie);
+  $("#thisName").html(pizza.thisName);
+  $("#thisSize").html(pizza.thisSize);
+  $("#thisMeat").html(pizza.thisMeat);
+  $("#thisVeggie").html(pizza.thisVeggie);
 }
 
 function displayChosenPizza(pizzaToDisplay) {
   var pizzaList = $("ol#listOfPizza");
   var htmlForPizza = "";
-  pizzaToDisplay.pizzas.forEach(function(pizza){
-    htmlForPizza += "<li id=" + pizza.id + ">"
+  pizzaToDisplay.pizza.forEach(function(pizza){
+    htmlForPizza += "<li id=" + pizza.id + ">" + pizza.thisName + "</li";
   })
   pizzaList.html(htmlForPizza);
 }
@@ -49,15 +60,16 @@ $(document).ready(function(){
   attachPizzaEars();
   $("form.orderForm").submit(function(event){
     event.preventDefault();
-    var inputName = $("input#inputNewname").val();
+    var inputThisName = $("input#inputNewName").val();
     var inputSize = $("#sizing").find(":selected").text();
     var inputMeat = $("input:checkbox[name=steak]:checked").val() + $("input:checkbox[name=chicken]:checked").val() + $("input:checkbox[name=salami]:checked").val() +
     $("input:checkbox[name=pate]:checked").val();
     var inputVeggie = $("input:checkbox[name=pepper]:checked").val() + $("input:checkbox[name=mushrooom]:checked").val() + $("input:checkbox[name=olive]:checked").val() + $("input:checkbox[name=onion]:checked").val();
 
-    var freshPizza = new Pizza(inputName, inputSize, inputMeat, inputVeggie);
+    var freshPizza = new Pizza(inputThisName, inputSize, inputMeat, inputVeggie);
     pizzaList.addPizza(freshPizza);
     displayChosenPizza(pizzaList);
+    console.log(freshPizza);
   })
 })
 
