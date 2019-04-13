@@ -13,7 +13,7 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Pizza Calculator</h1>  
+        <h1>Pizza Calculator</h1>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -26,7 +26,7 @@
             <option value="large">Large</option>
           </select>
             <hr>
-            <h4>Options</h4>
+            <h2>Options</h2>
             <select class="form-group" id="Listing">
               <option value="none" class="meat">None</option>
               <option value="Chicken" class="meat">Chicken</option>
@@ -35,17 +35,19 @@
               <option value="Pate" class="meat">Pate</option>
             </select>
             <hr>
+            <h2>Amount</h2>
             <div class="form-group">
-              <label for="amount" >Input Amount</label>
               <input type="number" name="amount" value="" id="amount">
             </div>
             <hr>
             <button type="submit" class="btn btn-danger" name="button">Submit</button>
           </form>
+        </div>
+        <div class="col-md-6">
           <div id="showPizza">
-            <p>Cost: <span id="thisCost"></span></p>
-          </div>
+            <h2>Cost: <span id="thisCost"></span></h2>
+          </div>  
+        </div>
       </div>
-    </div>
   </body>
 </html>

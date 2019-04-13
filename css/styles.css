@@ -6,3 +6,16 @@ body {
   background-image: url(../img/background.jpg);
   background-position: top;
 }
+h2 {
+  color: green;
+}
+.col-md-6 {
+  background-color: #ff771199;
+  border-radius: 25px;
+  text-align: center;
+
+}
+.btn{
+
+  border-radius: 25px;
+}
