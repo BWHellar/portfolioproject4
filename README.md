@@ -18,7 +18,7 @@ function PizzaList(sizing, options, amount)  {
   this.amount = amount;
 };
 ```
-###### This represents the prototype that will be used in the project.  The first part "PizzList" refers to the above function.  By using prototype we are allowing the function object to morph their inner attributes with the "priceCalculate" function.  This prototype will look at the current selections sizing and determine the price based on the size selected for that user.  At the end the amount designatedby the current user.
+###### This represents the prototype that will be used in the project.  The first part "PizzList" refers to the above function.  By using prototype we are allowing the function object to morph their inner attributes with the "priceCalculate" function.  This prototype will look at the current selections sizing and determine the price based on the size selected for that user.  At the end the amount designated by the current user.
 ```
 PizzaList.prototype.priceCalculate = function(){
   var price = 0;
