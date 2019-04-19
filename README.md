@@ -10,6 +10,13 @@
 
 #### The goal of this project is to utilize the skills learned during the week in a solo project.  This week focused on Objects and Prototypes.  Objects are a collection of properties.  New objects are created by using Object constructors.  Prototypes are the same Objects that are pointed to as they retain some of the qualities but also allow to the integration of new ones as well.
 
+## Specs
+| Spec | Input | Output |
+| :-------------     | :------------- | :------------- |
+| **Understands User Sizing** | User input: "Medium" | Output: "Medium" |
+| **Understands User Toppings**| User Input: "Chicken" | Output: "Chicken" |
+| **Prices Order based on selection**| Input: Order info with Size and Topping | Output: Estimated Price of selection |
+
 ###### This represents the objects that will be used in the project.  Within this object are three options that represent items that can be changed depending on the selection of the user.  This is always the constant as it pertains to all current selections.  Sizing, options, and amount alter depending on the user but they are always tied to the current "this".
 ```
 function PizzaList(sizing, options, amount)  {
