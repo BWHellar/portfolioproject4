@@ -16,6 +16,8 @@
 | **Understands User Sizing** | User input: "Medium" | Output: "Medium" |
 | **Understands User Toppings**| User Input: "Chicken" | Output: "Chicken" |
 | **Prices Order based on selection**| Input: Order info with Size and Topping | Output: Estimated Price of selection |
+#Example
+| **User Inputs** | Sizing: Large & Topping: Chicken | Output on click: Price|
 
 ###### This represents the objects that will be used in the project.  Within this object are three options that represent items that can be changed depending on the selection of the user.  This is always the constant as it pertains to all current selections.  Sizing, options, and amount alter depending on the user but they are always tied to the current "this".
 ```
