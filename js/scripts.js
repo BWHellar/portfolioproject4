@@ -4,7 +4,7 @@ function PizzaList(sizing, options, amount)  {
   this.sizing = sizing;
   this.options = options;
   this.amount = amount;
-};
+}
 
 // This represents the prototype that will be used in the project.  The first part "PizzList" refers to the above function.  By using prototype we are allowing the function object to morph their inner attributes with the "priceCalculate" function.  This prototype will look at the current selections sizing and determine the price based on the size selected for that user.  At the end the amount designatedby the current user.
 PizzaList.prototype.priceCalculate = function(){
@@ -31,5 +31,5 @@ $(document).ready(function(){
     var amount = $("#amount").val();
     var freshPizza = new PizzaList(inputSize, inputOptions, amount);
     $("#thisCost").text("$" + freshPizza.priceCalculate());
-  })
+  });
 });
